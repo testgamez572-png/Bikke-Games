@@ -10,6 +10,7 @@ import clashroyal from "./assets/clash-royale.jpg";
 import geometry from "./assets/geometry-dash-the-tower5.jpg";
 import mecharena from "./assets/Mech-Arena_1920x1080.jpg";
 import slotgameimg from "./assets/Slot-Gameplay-2.png";
+import syPlace from "./assets/sy.jpg";
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 
@@ -456,7 +457,7 @@ export default function App() {
               </div>
 
               <div class="flex-shrink-0 rounded-lg overflow-hidden border-4 border-white shadow-lg">
-                <img src={exampleImage}
+                <img src={syPlace}
                   alt="Sydney Opera House illustration"
                   class="w-80 h-auto object-cover" />
               </div>
@@ -864,7 +865,7 @@ export default function App() {
                 <p className="text-yellow-300">📧 info@gamecraftstudios.com</p>
                 <p className="text-yellow-300">📞 (555) 123-GAME</p>
                 <p className="text-yellow-300">📍 123 Game Street, Tech City</p>
-                <div className="flex space-x-4 mt-4">
+                {/* <div className="flex space-x-4 mt-4">
                   <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center cursor-pointer hover:bg-yellow-400 transition-colors">
                     <span className="text-amber-900 text-sm">f</span>
                   </div>
@@ -874,7 +875,7 @@ export default function App() {
                   <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center cursor-pointer hover:bg-yellow-400 transition-colors">
                     <span className="text-amber-900 text-sm">i</span>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
