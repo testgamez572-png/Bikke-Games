@@ -224,13 +224,13 @@ export default function App() {
       {/* Main Content */}
       <main className="pt-16">
         {/* Home Section */}
-        <section id="home" className="relative min-h-screen lg:min-h-[85vh]">
+        <section id="home" className="relative min-h-screen lg:min-h-[60vh]">
           {/* Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-blue-400 to-purple-500">
             <div className="absolute inset-0 opacity-30 bg-gradient-to-tr from-cyan-300 to-blue-300" />
           </div>
 
-          <div className="relative z-10 container mx-auto px-4 py-16 lg:py-12">
+          <div className="relative z-10 container mx-auto px-4 py-16 lg:py-1">
             <div className="grid md:grid-cols-2 gap-12 items-center justify-center lg:min-h-[70vh]">
               {/* Left content */}
               <div className="space-y-8 flex flex-col justify-center">
