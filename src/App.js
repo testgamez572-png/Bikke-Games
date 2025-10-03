@@ -224,78 +224,81 @@ export default function App() {
       {/* Main Content */}
       <main className="pt-16">
         {/* Home Section */}
-        <section id="home" className="min-h-screen relative ">
-          {/* Background with bright gradient */}
+        <section id="home" className="relative min-h-screen lg:min-h-[85vh]">
+          {/* Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-blue-400 to-purple-500">
             <div className="absolute inset-0 opacity-30 bg-gradient-to-tr from-cyan-300 to-blue-300" />
           </div>
 
-          <div className="relative z-10 container mx-auto px-4 py-20 ">
-            <div className="grid md:grid-cols-2 gap-12 items-center min-h-[80vh]">
-              <div className="space-y-8 ">
-                <div className="space-y-4 ">
-
-                  <h1 className=" text-5xl md:text-7xl font-black text-white leading-tight " style={{
-                    textShadow: '3px 3px 0px #e879f9, -3px -3px 0px #e879f9, 3px -3px 0px #e879f9, -3px 3px 0px #e879f9, 3px 0px 0px #e879f9, -3px 0px 0px #e879f9, 0px 3px 0px #e879f9, 0px -3px 0px #e879f9'
-                  }}>
+          <div className="relative z-10 container mx-auto px-4 py-16 lg:py-12">
+            <div className="grid md:grid-cols-2 gap-12 items-center justify-center lg:min-h-[70vh]">
+              {/* Left content */}
+              <div className="space-y-8 flex flex-col justify-center">
+                <div className="space-y-4">
+                  <h1
+                    className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight"
+                    style={{
+                      textShadow:
+                        "3px 3px 0px #e879f9, -3px -3px 0px #e879f9, 3px -3px 0px #e879f9, -3px 3px 0px #e879f9, 3px 0px 0px #e879f9, -3px 0px 0px #e879f9, 0px 3px 0px #e879f9, 0px -3px 0px #e879f9",
+                    }}
+                  >
                     Welcome to
-                    <span className="block ">Bikke Games</span>
+                    <span className="block">Bikke Games</span>
                   </h1>
-                  <p className="text-xl text-white leading-relaxed max-w-lg">
+                  <p className="text-lg md:text-xl text-white leading-relaxed max-w-lg">
                     Immerse yourself in beautifully crafted games that blend stunning visuals,
-                    engaging gameplay, and unforgettable experiences. Welcome to Bikke Games.
+                    engaging gameplay, and unforgettable experiences.
                   </p>
                 </div>
 
+                {/* CTA buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
-                    onClick={() => scrollToSection('download')}
-                    className="bg-cyan-300 hover:bg-cyan-200 text-purple-700 px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:scale-105 transition-all duration-300"
+                    onClick={() => scrollToSection("download")}
+                    className="bg-cyan-300 hover:bg-cyan-200 text-purple-700 px-6 py-3 md:px-8 md:py-4 text-lg font-semibold rounded-xl shadow-2xl hover:scale-105 transition-all duration-300"
                   >
                     <Download className="w-5 h-5 mr-2" />
                     Play Now
                   </Button>
 
                   <Button
-                    onClick={() => scrollToSection('games')}
+                    onClick={() => scrollToSection("games")}
                     variant="outline"
-                    className="border-2 border-cyan-300 text-white hover:bg-cyan-300 hover:text-purple-700 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+                    className="border-2 border-cyan-300 text-white hover:bg-cyan-300 hover:text-purple-700 px-6 py-3 md:px-8 md:py-4 text-lg font-semibold rounded-xl transition-all duration-300"
                   >
                     <Gamepad2 className="w-5 h-5 mr-2" />
                     Explore Games
                   </Button>
                 </div>
 
-                <div className="grid grid-cols-3  pt-8">
-                  <div className="">
-                    <div className="text-3xl font-black text-cyan-200">1M+</div>
+                {/* Stats */}
+                <div className="grid grid-cols-3 pt-6 md:pt-8 text-center md:text-left">
+                  <div>
+                    <div className="text-2xl md:text-3xl font-black text-cyan-200">1M+</div>
                     <div className="text-white text-sm">Active Players</div>
                   </div>
-                  <div className="">
-                    <div className="text-3xl font-black text-cyan-200">50+</div>
+                  <div>
+                    <div className="text-2xl md:text-3xl font-black text-cyan-200">50+</div>
                     <div className="text-white text-sm">Game Titles</div>
                   </div>
-                  <div className="">
-                    <div className="text-3xl font-black text-cyan-200">4.8★</div>
+                  <div>
+                    <div className="text-2xl md:text-3xl font-black text-cyan-200">4.8★</div>
                     <div className="text-white text-sm">User Rating</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col items-center space-y-6 px-4 sm:px-6">
-                {/* Carousel Container */}
+              {/* Right carousel */}
+              <div className="flex justify-center items-center px-4 sm:px-6">
                 <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg overflow-hidden rounded-2xl">
-                  {/* Sliding Wrapper */}
+                  {/* Slides */}
                   <div
                     className="flex transition-transform duration-700 ease-in-out"
                     style={{ transform: `translateX(-${current * 100}%)` }}
                   >
                     {images.map((img, index) => (
                       <div key={index} className="flex-shrink-0 w-full relative">
-                        {/* Blurred Background */}
                         <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-2xl blur-2xl opacity-50"></div>
-
-                        {/* Image */}
                         <ImageWithFallback
                           src={img}
                           alt={`Slide ${index + 1}`}
@@ -305,29 +308,28 @@ export default function App() {
                     ))}
                   </div>
 
-                  {/* Navigation Buttons */}
+                  {/* Nav buttons */}
                   <button
                     onClick={prevSlide}
-                    className="absolute top-1/2 left-3 transform -translate-y-1/2  hover:bg-purple-700 text-white rounded-full p-3 shadow-lg transition-all duration-300"
+                    className="absolute top-1/2 left-3 transform -translate-y-1/2 hover:bg-purple-700 bg-purple-600/80 text-white rounded-full p-3 shadow-lg transition-all duration-300"
                   >
-                    <FaChevronLeft size={25} />
+                    <FaChevronLeft size={22} />
                   </button>
-
                   <button
                     onClick={nextSlide}
-                    className="absolute top-1/2 right-3 transform -translate-y-1/2  hover:bg-purple-700 text-white rounded-full p-3 shadow-lg transition-all duration-300"
+                    className="absolute top-1/2 right-3 transform -translate-y-1/2 hover:bg-purple-700 bg-purple-600/80 text-white rounded-full p-3 shadow-lg transition-all duration-300"
                   >
-                    <FaChevronRight size={25} />
+                    <FaChevronRight size={22} />
                   </button>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
 
+
         {/* Games Section */}
-        <section id="games" className="py-20 bg-gradient-to-b from-cyan-100 to-blue-200">
+        {/* <section id="games" className="py-20 bg-gradient-to-b from-cyan-100 to-blue-200">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <Badge className="bg-purple-500 text-white px-4 py-2 mb-4 tracking-wider">
@@ -369,106 +371,10 @@ export default function App() {
               </Button>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        {/* About Us Section */}
-
-        <section id="about" class="py-20">
-          <div class="container mx-auto px-4">
-
-
-            <div class="text-center mb-16">
-              {/* <div class="inline-block bg-pink-500 text-white px-4 py-2 rounded-full mb-4">
-                👥  About Us
-              </div> */}
-              <Badge className="bg-pink-500 text-white px-4 py-2 mb-4 tracking-wider">
-                👥  About Us
-              </Badge>
-              <h2 class="text-4xl md:text-5xl font-black text-purple-700 mb-6">
-                Welcome to Bikkie Gmaes
-              </h2>
-            </div>
-
-
-            <div class="grid md:grid-cols-3 gap-8">
-
-              <div class="p-8 bg-white/90 backdrop-blur-sm border-2 border-purple-200 text-center rounded-lg hover:border-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                <div class="text-cyan-400 text-4xl mb-4">🏆</div>
-                <h3 class="text-2xl font-black text-purple-700 mb-2">Our Mission</h3>
-                <p class="text-purple-600">
-                  Creating innovative games that inspire creativity and bring people together through shared adventures.
-                </p>
-              </div>
-
-
-              <div class="p-8 bg-white/90 backdrop-blur-sm border-2 border-purple-200 text-center rounded-lg hover:border-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                <div class="text-cyan-400 text-4xl mb-4">⭐</div>
-                <h3 class="text-2xl font-black text-purple-700 mb-2">Our Vision</h3>
-                <p class="text-purple-600">
-                  To be the leading studio in crafting immersive gaming experiences that resonate with players globally.
-                </p>
-              </div>
-
-
-              <div class="p-8 bg-white/90 backdrop-blur-sm border-2 border-purple-200 text-center rounded-lg hover:border-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                <div class="text-cyan-400 text-4xl mb-4">🎮</div>
-                <h3 class="text-2xl font-black text-purple-700 mb-2">Our Values</h3>
-                <p class="text-purple-600">
-                  Innovation, quality, community, and putting player experience at the heart of everything we do.
-                </p>
-              </div>
-            </div>
-
-
-            {/* <div class="mt-20 bg-gradient-to-r from-blue-100 to-purple-100 p-8 rounded-xl flex flex-col md:flex-row items-center justify-center space-y-10 md:space-y-0 md:space-x-12">
-
-
-              <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-
-
-                <div class="max-w-md text-left">
-                  <h2 class="text-3xl font-extrabold text-purple-800 drop-shadow-md mb-4 ">Bikkie Studio</h2>
-                  <p class="text-pink-600 text-md leading-relaxed text-left">
-                    Based in Sydney, Australia, we specialize in creating custom mobile games tailored to your vision.
-                    From concept to launch, our team crafts engaging, high-quality games designed to captivate players
-                    and bring your ideas to life.
-                  </p>
-                </div>
-
-                <div class="flex-shrink-0 rounded-lg overflow-hidden border-4 border-white shadow-lg">
-                  <img src={exampleImage}
-                    alt="Sydney Opera House illustration"
-                    class="w-80 h-auto object-cover" />
-                </div>
-
-              </div>
-
-            </div> */}
-
-            <div class="mt-20 p-8 rounded-xl flex flex-col md:flex-row items-start justify-between space-y-10 md:space-y-0 md:space-x-12">
-
-              <div class="max-w-md text-left">
-                <h2 class="text-3xl font-extrabold text-purple-800 drop-shadow-md mb-4">Bikkie Studio</h2>
-                <p class="text-pink-600 text-md leading-relaxed text-left">
-                  Based in Sydney, Australia, we specialize in creating custom mobile games tailored to your vision.
-                  From concept to launch, our team crafts engaging, high-quality games designed to captivate players
-                  and bring your ideas to life.
-                </p>
-              </div>
-
-              <div class="flex-shrink-0 rounded-lg overflow-hidden border-4 border-white shadow-lg">
-                <img src={syPlace}
-                  alt="Sydney Opera House illustration"
-                  class="w-80 h-auto object-cover" />
-              </div>
-
-            </div>
-
-          </div>
-        </section>
-
-        {/* Download Section */}
-        <section className="py-20 bg-blue-100">
+         {/* Download Section */}
+        <section id="games" className="py-20 bg-blue-100">
           <div className="container mx-auto px-6">
             {/* Title Section */}
             <div className="text-center mb-16">
@@ -601,15 +507,106 @@ export default function App() {
               </div>
 
             </div>
+          </div>
+        </section>
+
+        {/* About Us Section */}
+
+        <section id="about" class="py-20">
+          <div class="container mx-auto px-4">
 
 
+            <div class="text-center mb-16">
+              {/* <div class="inline-block bg-pink-500 text-white px-4 py-2 rounded-full mb-4">
+                👥  About Us
+              </div> */}
+              <Badge className="bg-pink-500 text-white px-4 py-2 mb-4 tracking-wider">
+                👥  About Us
+              </Badge>
+              <h2 class="text-4xl md:text-5xl font-black text-purple-700 mb-6">
+                Welcome to Bikkie Gmaes
+              </h2>
+            </div>
 
 
+            <div class="grid md:grid-cols-3 gap-8">
+
+              <div class="p-8 bg-white/90 backdrop-blur-sm border-2 border-purple-200 text-center rounded-lg hover:border-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div class="text-cyan-400 text-4xl mb-4">🏆</div>
+                <h3 class="text-2xl font-black text-purple-700 mb-2">Our Mission</h3>
+                <p class="text-purple-600">
+                  Creating innovative games that inspire creativity and bring people together through shared adventures.
+                </p>
+              </div>
 
 
+              <div class="p-8 bg-white/90 backdrop-blur-sm border-2 border-purple-200 text-center rounded-lg hover:border-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div class="text-cyan-400 text-4xl mb-4">⭐</div>
+                <h3 class="text-2xl font-black text-purple-700 mb-2">Our Vision</h3>
+                <p class="text-purple-600">
+                  To be the leading studio in crafting immersive gaming experiences that resonate with players globally.
+                </p>
+              </div>
+
+
+              <div class="p-8 bg-white/90 backdrop-blur-sm border-2 border-purple-200 text-center rounded-lg hover:border-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div class="text-cyan-400 text-4xl mb-4">🎮</div>
+                <h3 class="text-2xl font-black text-purple-700 mb-2">Our Values</h3>
+                <p class="text-purple-600">
+                  Innovation, quality, community, and putting player experience at the heart of everything we do.
+                </p>
+              </div>
+            </div>
+
+
+            {/* <div class="mt-20 bg-gradient-to-r from-blue-100 to-purple-100 p-8 rounded-xl flex flex-col md:flex-row items-center justify-center space-y-10 md:space-y-0 md:space-x-12">
+
+
+              <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+
+
+                <div class="max-w-md text-left">
+                  <h2 class="text-3xl font-extrabold text-purple-800 drop-shadow-md mb-4 ">Bikkie Studio</h2>
+                  <p class="text-pink-600 text-md leading-relaxed text-left">
+                    Based in Sydney, Australia, we specialize in creating custom mobile games tailored to your vision.
+                    From concept to launch, our team crafts engaging, high-quality games designed to captivate players
+                    and bring your ideas to life.
+                  </p>
+                </div>
+
+                <div class="flex-shrink-0 rounded-lg overflow-hidden border-4 border-white shadow-lg">
+                  <img src={exampleImage}
+                    alt="Sydney Opera House illustration"
+                    class="w-80 h-auto object-cover" />
+                </div>
+
+              </div>
+
+            </div> */}
+
+            <div class="mt-20 p-8 rounded-xl flex flex-col md:flex-row items-start justify-between space-y-10 md:space-y-0 md:space-x-12">
+
+              <div class="max-w-md text-left">
+                <h2 class="text-3xl font-extrabold text-purple-800 drop-shadow-md mb-4">Bikkie Studio</h2>
+                <p class="text-pink-600 text-md leading-relaxed text-left">
+                  Based in Sydney, Australia, we specialize in creating custom mobile games tailored to your vision.
+                  From concept to launch, our team crafts engaging, high-quality games designed to captivate players
+                  and bring your ideas to life.
+                </p>
+              </div>
+
+              <div class="flex-shrink-0 rounded-lg overflow-hidden border-4 border-white shadow-lg">
+                <img src={syPlace}
+                  alt="Sydney Opera House illustration"
+                  class="w-80 h-auto object-cover" />
+              </div>
+
+            </div>
 
           </div>
         </section>
+
+       
 
 
         {/* Support Section */}
@@ -637,12 +634,6 @@ export default function App() {
                 <p className="text-amber-600 text-sm mt-2">Response within 24 hours</p>
               </Card>
             </div>
-
-
-
-
-
-
 
           </div>
         </section>
@@ -820,9 +811,15 @@ export default function App() {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
-                  <Gamepad2 className="w-4 h-4 text-amber-900" />
+                  {/* <Gamepad2 className="w-4 h-4 text-amber-900" /> */}
+                  <ImageWithFallback
+                  src={logo}
+                  alt="Bikke Games Logo"
+                  className="w-full h-full object-cover rounded-md"
+                />
                 </div>
-                <div className="font-black text-lg">GameCraft Studios</div>
+                {/* <div className="font-black text-lg">GameCraft Studios</div>*/}
+                <div className="font-black text-lg">Bikkies Game</div>
               </div>
               <p className="text-yellow-300 text-sm leading-relaxed">
                 Creating immersive gaming experiences that inspire and entertain players around the world.
